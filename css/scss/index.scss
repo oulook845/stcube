@@ -270,11 +270,13 @@ body {
             width: 27px;
             height: 15px;
             background: url(../images/vprev.png) no-repeat center;
+            cursor: pointer;
           }
           .next {
             width: 27px;
             height: 15px;
             background: url(../images/vnext.png) no-repeat center;
+            cursor: pointer;
           }
           ul.paginavtion {
             display: flex;
