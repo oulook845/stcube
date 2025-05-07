@@ -1,0 +1,340 @@
+@charset "UTF-8";
+body {
+  color: #222;
+  font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
+}
+
+#wrap {
+  padding: 14px;
+}
+
+#header {
+  width: 100%;
+  height: 110px;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  transition: 0.5s;
+}
+#header.on {
+  color: #000;
+  background: #fff;
+}
+#header.on::after {
+  height: 115px;
+}
+#header.on .inner #logo a {
+  background-image: url(../images/logo2.png);
+}
+#header.on .inner #utils .langs button::after {
+  background-image: url(../images/lang_arr_bl.png);
+}
+#header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  background-color: #f5f5f5;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: 0.5s;
+}
+#header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+  max-width: 1700px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+#header .inner #logo a {
+  display: inline-block;
+  width: 196px;
+  height: 36px;
+  background: url(../images/logo.png) no-repeat center;
+}
+#header .inner #gnb {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+#header .inner #gnb > ul {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+}
+#header .inner #gnb li.main_nav {
+  height: 100%;
+  font-size: 18px;
+  margin: 0 2vw; /* 0 50px */
+}
+#header .inner #gnb li.main_nav:hover > a {
+  border-bottom: 2px solid #000;
+}
+#header .inner #gnb li.main_nav > a {
+  line-height: 110px;
+}
+#header .inner #gnb li.main_nav.on ul.sub_nav {
+  height: 115px;
+  opacity: 1;
+}
+#header .inner #gnb li.main_nav ul.sub_nav {
+  width: 100%;
+  height: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 110px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#header .inner #gnb li.main_nav ul.sub_nav li {
+  position: relative;
+}
+#header .inner #gnb li.main_nav ul.sub_nav li a {
+  display: inline-block;
+  height: 100%;
+  line-height: 115px;
+  padding: 0 45px;
+  cursor: pointer;
+}
+#header .inner #gnb li.main_nav ul.sub_nav li a:hover {
+  color: #ec7203;
+}
+#header .inner #gnb li.main_nav ul.sub_nav li:not(:first-child)::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 14px;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#header .inner #utils {
+  display: flex;
+  align-items: center;
+}
+#header .inner #utils .langs {
+  width: 64px;
+  height: 34px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 34px;
+  border: 1px solid currentColor;
+  position: relative;
+}
+#header .inner #utils .langs button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#header .inner #utils .langs button::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 6px;
+  margin-left: 3px;
+  background: url(../images/lang_arr.png) no-repeat center;
+}
+#header .inner #utils .langs ul.lang_list {
+  height: 0px;
+  margin-top: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+#header .inner #utils .langs ul.lang_list li {
+  width: 64px;
+  height: 32px;
+  line-height: 32px;
+  font-weight: 500;
+  text-align: center;
+  color: #000;
+  border-radius: 34px;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+#header .inner #utils .langs ul.lang_list li:not(:last-child) {
+  margin-bottom: 5px;
+}
+#header .inner #utils #allMenu_btn {
+  width: 36px;
+  margin-left: 33px;
+  cursor: pointer;
+}
+#header .inner #utils #allMenu_btn::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+}
+#header .inner #utils #allMenu_btn::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  margin-top: 5px;
+}
+#header .inner #utils #allMenu_btn div {
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+  margin: 5px auto 0;
+}
+
+#main #visual {
+  width: 100%;
+  height: calc(100vh - 28px);
+  position: relative;
+}
+#main #visual .inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px 10px 100px 10px;
+  position: relative;
+}
+#main #visual .inner .slideWrap {
+  width: 100%;
+  height: 100%;
+}
+#main #visual .inner .slideWrap .slide_list {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#main #visual .inner .slideWrap .slide_list div {
+  width: 100%;
+  height: 100%;
+  background: url(../images/main_visual1.jpg) no-repeat center/cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 3s ease-in-out;
+}
+#main #visual .inner .slideWrap .slide_list div:nth-child(2) {
+  background-image: url(../images/main_visual2.jpg);
+}
+#main #visual .inner .slideWrap .slide_list div:nth-child(3) {
+  background-image: url(../images/main_visual3.jpg);
+}
+#main #visual .inner .slideWrap .slide_nav {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+}
+#main #visual .inner .slideWrap .slide_nav .prev {
+  width: 27px;
+  height: 15px;
+  background: url(../images/vprev.png) no-repeat center;
+}
+#main #visual .inner .slideWrap .slide_nav .next {
+  width: 27px;
+  height: 15px;
+  background: url(../images/vnext.png) no-repeat center;
+}
+#main #visual .inner .slideWrap .slide_nav ul.paginavtion {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 55px;
+}
+#main #visual .inner .slideWrap .slide_nav ul.paginavtion li {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.75s;
+}
+#main #visual .inner .slideWrap .slide_nav ul.paginavtion li.on {
+  width: 22px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+}
+#main #visual .inner .txtBox {
+  width: 92%;
+  max-width: 1570px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#main #visual .inner .txtBox::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+#main #visual .inner .txtBox .title {
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-size: 86px;
+  line-height: 1.35;
+  overflow: hidden;
+}
+#main #visual .inner .txtBox .title span {
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1.2s 0.2s;
+}
+#main #visual .inner .txtBox .sub_title {
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-size: 86px;
+  line-height: 1.35;
+  overflow: hidden;
+}
+#main #visual .inner .txtBox .sub_title span {
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1.2s 0.4s;
+}
+#main #visual .inner .txtBox .txt {
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 10px;
+  overflow: hidden;
+}
+#main #visual .inner .txtBox .txt span {
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1.2s 1.2s;
+}
